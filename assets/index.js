@@ -1,7 +1,7 @@
 window.onload = function() {
 	const degree = 5;
 	const correctSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // ↑ ↑ ↓ ↓ ← → ← → B A
-	const rawSequence = ['🡱', '🡱', '🡳', '🡳', '🡰', '🡲', '🡰', '🡲', 'B', 'A'];
+	const rawSequence = ['↑', '↑', '↓', '↓', '←', '→', '←', '→', 'B', 'A'];
 	const img = document.querySelector("#image");
 	const keyboardSequence = document.querySelector("#keyboard-sequence");
 	let keySequence = [];
