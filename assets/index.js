@@ -50,7 +50,7 @@ window.onload = function() {
 		keyboardSequence.appendChild(pressedSpan);
 	
 		const notPressedSpan = document.createElement("span");
-		notPressedSpan.innerText = ' ' + rawSequence.slice(keySequence.length).join('');
+		notPressedSpan.innerText = rawSequence.slice(keySequence.length).join('');
 		notPressedSpan.classList.add("font-white");
 		keyboardSequence.appendChild(notPressedSpan);
 	}
