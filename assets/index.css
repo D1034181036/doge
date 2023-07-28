@@ -15,5 +15,8 @@ body {
 }
 
 #screen-keyboard .btn {
+	font-size: 28px;
 	border-radius: 0;
+	width: 75px;
+	height: 75px;
 }
