@@ -1,21 +1,39 @@
 window.onload = function() {
+	// ====== Parameters ======
 	const degree = 5;
-	const correctSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // ↑ ↑ ↓ ↓ ← → ← → B A
+	const correctSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
 	const rawSequence = ['↑', '↑', '↓', '↓', '←', '→', '←', '→', 'B', 'A'];
 	let keySequence = [];
 	let angle = 0;
+	const buttonCodeMaps = {
+	    buttonUp: 38,
+	    buttonDown: 40,
+	    buttonLeft: 37,
+	    buttonRight: 39,
+	    buttonA: 65,
+	    buttonB: 66,
+	};
 
+	// ====== Elements ======
 	const img = document.querySelector("#image");
-	const keyboardSequence = document.querySelector("#keyboard-sequence");
-	const pressedSpan = document.querySelector("#keyboard-sequence .font-black");
-	const notPressedSpan = document.querySelector("#keyboard-sequence .font-white");
+	const pressedSpan = document.querySelector("#text-black");
+	const notPressedSpan = document.querySelector("#text-white");
+	const screenButtons = document.querySelectorAll('#screen-keyboard button');
 
-	// Listener
+	// ====== Listeners ======
 	document.addEventListener("keyup", logKey);
 
-	// Initial Keyboard Sequence
+	screenButtons.forEach(button => {
+		button.addEventListener('click', () => {
+			const keyupEvent = new KeyboardEvent('keyup', {keyCode: buttonCodeMaps[button.id]});
+			document.dispatchEvent(keyupEvent);
+		});
+	});
+
+	// ====== Initial Keyboard Sequence ======
 	updateKeyboardSequence();
 
+	// ====== Functions ======
 	function logKey(e) {
 		keySequence.push(e.keyCode);
 		checkSequence();

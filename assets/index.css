@@ -1,32 +1,19 @@
 body {
 	background-color: #F6F6F6;
-}
-
-.container {
-  	display: flex;
-  	justify-content: center;
-  	margin-top: 100px;
-}
-
-#image {
-	border-radius: 50%;
-}
-
-#keyboard-sequence {
-	display: flex;
-	justify-content: center;
-	margin-top: 50px;
 	letter-spacing: 0.75rem;
 }
 
-.font-white {
-	font-size: 28px;
-	text-shadow: 2px 2px 2px black, 0px 0px 2px black;
-	color: white;
+#image {
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
 }
 
-.font-black {
-	font-size: 28px;
+.font {
+	font-size: 26px;
 	text-shadow: 2px 2px 2px black, 0px 0px 2px black;
-	color: black;
+}
+
+#screen-keyboard .btn {
+	border-radius: 0;
 }
